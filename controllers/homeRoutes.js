@@ -19,5 +19,3 @@ router.get('/', async (res, req) => {
         res.status(500).json(err);
     }
 });
-
-router.get
