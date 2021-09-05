@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Tech Blog</title>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![end if]-->
+    <meta charset="utf-8">
+    <meta name="keywords" content="blog, writing, personal, technology, sharing, information">
+    <meta name="description" content="Compilation of blogs based around technology">
+    <meta name="author" content="Stephanie Melanofridis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="#">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"
+        async="false"></script>
+</head>
+
+<body>
+
+    <header>
+        <!-- ********** NAVIGATION ********** -->
+        <nav>
+            <a href="#main-content" title="Skip to main content" class="skip">Skip to main content</a>
+            <ul>
+                <li><a href="#home" title="Homepage">Home</a></li>
+                <li><a href="#dashboard" title="Dashboard">Dashboard</a></li>
+                {{#if logged_in}}
+                <li><a href="#logout" title="Logout">Logout</a></li>
+                {{else}}
+                <li><a href="#loginsignup" title="Login / Sign Up">Login</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+        <!-- ********** NAME TITLE ********** -->
+        <h1>Tech Blog</h1>
+        <img src="../../public/images/1x/bgrd-imgArtboard 2.png">
+        <p>Create. Share. Learn </p>
+    </header>
+
+    <main id="main-content">
+
+        {{{body}}}
+
+    </main>
+
+
+    <footer>
+
+        <p>&copy; Steph Melanofridis</p>
+        <a class="top" href="#main-content">Back to top</a>
+
+    </footer>
+
+</body>
+
+
+
+</html>
