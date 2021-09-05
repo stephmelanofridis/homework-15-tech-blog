@@ -2,11 +2,11 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const { withAuth } = require('../utils/auth');
 
-router.get('/', async (res, req) => {
+router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: ['poster', 'comment'],
-            order: [['date', 'ASC']],
+            order: [['date_created', 'ASC']],
         });
 
         const posts = postData.map((post) => post.get({ plain: true }));
@@ -19,3 +19,5 @@ router.get('/', async (res, req) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
