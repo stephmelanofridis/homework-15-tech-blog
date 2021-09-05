@@ -63,6 +63,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
+            console.log(err)
             res.status(204).end();
         });
     } else {
@@ -71,3 +72,4 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
