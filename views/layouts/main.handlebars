@@ -26,7 +26,7 @@
         <nav class="navbar">
             <a href="#main-content" title="Skip to main content" class="skip d-none">Skip to main content</a>
             <ul class="container d-flex flex-row justify-content-end list-unstyled">
-                <li class="nav-item"><a href="#home" title="Homepage" class="nav-link-active">Home</a></li>
+                <li class="nav-item"><a href="#home" title="Homepage" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#dashboard" title="Dashboard" class="nav-link">Dashboard</a></li>
                 {{#if logged_in}}
                 <li class="nav-item"><a href="#logout" title="Logout" class="nav-link">Logout</a></li>
@@ -36,9 +36,13 @@
             </ul>
         </nav>
         <!-- ********** NAME TITLE ********** -->
-        <h1 class="title">Tech Blog</h1>
-        <p class="headline">Create. Share. Learn </p>
-        <img src="/images/bgrd-img2Artboard 2.png" class="logo img-fluid">
+        <div class="container d-flex pt-5 justify-content-evenly">
+            <div>
+                <h1 class="title mb-0">Tech Blog</h1>
+                <p class="headline mt-0 ms-5">Create. Share. Learn </p>
+            </div>
+            <img src="/images/bgrd-img2Artboard 2.png" class="logo img-fluid">
+        </div>
     </header>
 
     <main id="main-content" class="container-fluid">
@@ -49,10 +53,12 @@
 
 
     <footer>
-
-        <p>&copy; Steph Melanofridis</p>
-        <a class="top" href="#main-content">Back to top</a>
-
+        <div class="container d-flex justify-content-center">
+            <div class="pt-2">
+                <a class="top list-unstyled" href="#main-content">Back to top</a>
+                <p class="copyright">&copy; Steph Melanofridis</p>
+            </div>
+        </div>
     </footer>
 
 </body>

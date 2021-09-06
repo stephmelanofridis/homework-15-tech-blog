@@ -5,6 +5,7 @@
     --champagne: #EEE0CB;
     --darkpurple: #424BE1; 
     --lightblue: #BDD1F9;
+    --black: #000000;
 }
 
 /* ---------- NAVIGATION STYLES ---------- */
@@ -19,22 +20,22 @@ nav ul li {
     font-style: normal;
     font-size: 1.7em;
 }
-nav ul li a:link {
+.nav-item a:link {
     color: var(--darkpurple);
     text-decoration: none;
 }
 
-nav ul li a:visited {
+.nav-item a:visited {
     color: var(--darkpurple);
     text-decoration: none;
 }
 
-nav ul li a:hover {
+.nav-item a:hover {
     color: var(--orange);
     text-decoration: none;
 }
 
-nav ul li a:active {
+.nav-item a:active {
     color: var(--darkpurple);
     text-decoration: none;
 }
@@ -51,12 +52,54 @@ nav ul li a:active {
     font-weight: 400;
     font-style: normal;
     text-transform: lowercase;
-    font-size: 4em;
+    font-size: 5.5em;
+    color: var(--darkpurple);  
+    text-shadow: 2px 2px 8px var(--orange); 
 }
 
 .headline {
     font-family: raleway, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 2em;
+    font-size: 2.5em;
+    color: var(--orange); 
+}
+
+/* ---------- FOOTER STYLES ---------- */
+footer {
+    background-color: var(--lightblue);
+}
+
+.top {
+    font-family: acier-bat-solid,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7em;
+}
+
+.top:link {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+.top:visited {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+.top:hover {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.top:active {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+.copyright {
+    font-family: raleway, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--darkpurple); 
 }
