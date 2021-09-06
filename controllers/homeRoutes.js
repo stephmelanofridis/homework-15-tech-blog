@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-const { withAuth } = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -20,10 +20,19 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/loginsignup', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('loginsignup');
+});
+
+router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [{ model: User }],
+            attributes: { exclude: ['password'] },
             order: [['date_created', 'DESC']],
             where: { user_id: req.session.user_id, }
         })
@@ -36,7 +45,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
             });
         } else {
             res.render('dashboard', {
-                logged_in: req.session.logged_in,
+                logged_in: req.session.logged_in
             });
         };
     } catch (err) {
