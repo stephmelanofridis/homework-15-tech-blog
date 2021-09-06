@@ -1,3 +1,62 @@
-nav .skip {
-    display: none;
+/* ---------- COLOURS ---------- */
+:root {
+    --purple: #B298DC;
+    --orange: #FA7267;
+    --champagne: #EEE0CB;
+    --darkpurple: #424BE1; 
+    --lightblue: #BDD1F9;
+}
+
+/* ---------- NAVIGATION STYLES ---------- */
+nav {
+    background-color: var(--lightblue);
+}
+
+nav ul li {
+    padding-left: 50px;
+    font-family: acier-bat-solid,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7em;
+}
+nav ul li a:link {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+nav ul li a:visited {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+nav ul li a:active {
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+/* ---------- LOGO IMAGE STYLES ---------- */
+.logo {
+    width: 300px;
+    height: 200px;
+}
+
+/* ---------- HEADER STYLES ---------- */
+.title {
+    font-family: sunflower,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: lowercase;
+    font-size: 4em;
+}
+
+.headline {
+    font-family: raleway, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2em;
 }
