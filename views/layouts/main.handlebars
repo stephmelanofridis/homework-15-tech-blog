@@ -26,12 +26,13 @@
         <nav class="navbar">
             <a href="#main-content" title="Skip to main content" class="skip d-none">Skip to main content</a>
             <ul class="container d-flex flex-row justify-content-end list-unstyled">
-                <li class="nav-item"><a href="#home" title="Homepage" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#dashboard" title="Dashboard" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="/" title="Homepage" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/dashboard" title="Dashboard" class="nav-link">Dashboard</a></li>
                 {{#if logged_in}}
-                <li class="nav-item"><a href="#logout" title="Logout" class="nav-link">Logout</a></li>
+                <li class="nav-item"><a href="/loggedout" title="Logout" class="nav-link">Logout</a></li>
                 {{else}}
-                <li class="nav-item"><a href="#loginsignup" title="Login / Sign Up" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="/loginsignup" title="Login / Sign Up" class="nav-link">Login / Sign Up</a>
+                </li>
                 {{/if}}
             </ul>
         </nav>
