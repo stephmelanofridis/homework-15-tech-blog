@@ -34,7 +34,7 @@ router.get('/dashboard', async (req, res) => {
             include: { model: User, as: 'poster' },
             attributes: { exclude: ['password'] },
             order: [['date_created', 'DESC']],
-            // where: { user_id: req.session.user_id, }
+            where: { id: req.session.id, }
         });
 
         if (postData.length > 0) {

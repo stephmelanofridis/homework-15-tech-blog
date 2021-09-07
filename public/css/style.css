@@ -126,3 +126,9 @@ button.deleteBtn {
     color: white;
     background-color: #E61C26;
 }
+
+.post-card .btn:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
+}
