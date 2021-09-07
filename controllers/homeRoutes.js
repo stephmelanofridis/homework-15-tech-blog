@@ -31,11 +31,11 @@ router.get('/loginsignup', (req, res) => {
 router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
-            include: [{ model: User }],
+            include: { model: User, as: 'poster' },
             attributes: { exclude: ['password'] },
             order: [['date_created', 'DESC']],
-            where: { user_id: req.session.user_id, }
-        })
+            // where: { user_id: req.session.user_id, }
+        });
 
         if (postData.length > 0) {
             const posts = postData.map((post) => post.get({ plain: true }));
@@ -49,6 +49,7 @@ router.get('/dashboard', async (req, res) => {
             });
         };
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     };
 });

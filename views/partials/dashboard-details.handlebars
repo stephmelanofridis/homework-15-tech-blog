@@ -1,0 +1,14 @@
+<section class="card p-2 m-2">
+    <h3 class="card-header">{{title}}</h3>
+    <div class="card-body position-relative">
+        <p class="card-title text-secondary d-flex flex-row"> Posted on {{format_date date_created}}</p>
+        <a href="/post/edit/{{id}}"><button class="btn position-absolute top-50 end-0 translate-middle-y" type="submit"
+                id="editBtn"> Edit Post </button></a>
+        <button class="btn deleteBtn position-absolute end-0" type="submit" id="deleteBtn" data-postid="{{id}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+            </svg> </button>
+    </div>
+</section>

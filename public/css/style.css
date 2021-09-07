@@ -103,3 +103,26 @@ footer {
     font-style: normal;
     color: var(--darkpurple); 
 }
+
+/* ---------- LOGIN/SIGNUP HANDLEBARS ---------- */
+.btn {
+    box-shadow: 2px 2px 8px var(--orange);
+}
+
+.form-group .btn:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
+}
+
+/* ---------- DASHBOARD HANDLEBARS ---------- */
+.add-new-blog.btn:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
+}
+
+button.deleteBtn {
+    color: white;
+    background-color: #E61C26;
+}

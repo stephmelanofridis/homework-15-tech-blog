@@ -1,27 +1,51 @@
-<section class="container d-flex">
+<section class="card row w-100 m-1 px-4">
 
-    <div>
-        <h2>Login</h2>
-        <form class="login-form">
-            <label for="login-email">Email:</label>
-            <input type="text" id="login-email">
-            <label for="login-password">Password:</label>
-            <input type="password" id="login-password">
-            <button class="btn" type="submit">Login</button>
-        </form>
-    </div>
+    <div class="card-body d-flex flex-row col-auto w-100 px-4">
 
-    <div>
-        <h2>Signup</h2>
-        <form class="signup-form">
-            <label for="signup-username">Username:</label>
-            <input type="text" id="signup-username">
-            <label for="signup-email">Email:</label>
-            <input type="text" id="signup-email">
-            <label for="signup-password">Password:</label>
-            <input type="password" id="signup-password">
-            <button class="btn" type="submit">Sign Up</button>
-        </form>
+        <!-- ********** LOGIN ********** -->
+        <div class="d-flex flex-column w-50 px-4">
+            <div>
+                <h2 class="form-title text-center">Login</h2>
+                <form class="form login-form">
+            </div>
+            <div class="form-group p-4">
+                <label for="login-email" class="col-form-label">Email:</label>
+                <input type="text" id="login-email" class="form-input form-control">
+            </div>
+            <div class="form-group p-4">
+                <label for="login-password" class="col-form-label">Password:</label>
+                <input type="password" id="login-password" class="form-input form-control">
+            </div>
+            <div class="form-group p-4">
+                <button class="login-btn btn mx-3 w-100" type="submit">Login</button>
+            </div>
+            </form>
+        </div>
+
+        <!-- ********** SIGN UP ********** -->
+        <div class="d-flex flex-column w-50 px-4">
+            <div>
+                <h2 class="form-title text-center">Signup</h2>
+                <form class="form signup-form">
+            </div>
+            <div class="form-group p-4">
+                <label for="signup-username" class="col-form-label">Username:</label>
+                <input type="text" id="signup-username" class="form-input form-control">
+            </div>
+            <div class="form-group p-4">
+                <label for="signup-email" class="col-form-label">Email:</label>
+                <input type="text" id="signup-email" class="form-input form-control">
+            </div>
+            <div class="form-group p-4">
+                <label for="signup-password" class="col-form-label">Password:</label>
+                <input type="password" id="signup-password" class="form-input form-control">
+            </div>
+            <div class="form-group p-4">
+                <button class="signup-btn btn mx-3 w-100" type="submit">Sign Up</button>
+            </div>
+            </form>
+        </div>
+
     </div>
 
 </section>

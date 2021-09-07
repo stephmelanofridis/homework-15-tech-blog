@@ -1,3 +1,15 @@
-<div class="d-grid gap-2">
-    <button class="btn btn-primary" type="button">Button</button>
+<div class="position-relative p-6 m-6">
+    <div class="d-grid w-50 p-6 m-6 position-absolute top-50 start-50 translate-middle">
+        <button class="add-new-blog btn" type="button">Add new blog post</button>
+    </div>
 </div>
+{{#if posts}}
+{{#each posts as |post|}}
+{{>dashboard-details}}
+{{/each}}
+{{else}}
+<h2> No posts yet.</h2>
+{{/if}}
+{{#if posts}}
+<script src="js/deletepost.js"></script>
+{{/if}}
