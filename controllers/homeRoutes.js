@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [{ model: User }],
             order: [['createdAt', 'DESC']],
         });
-
         const posts = postData.map((post) => post.get({ plain: true }));
+        console.log(posts)
         res.render('homepage', {
             posts,
             logged_in: req.session.logged_in,
@@ -47,19 +47,26 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 logged_in: req.session.logged_in,
                 current_user: req.session.user_id
             });
-        }
-        else {
-            console.log('here is the dashboard')
+
+        } else {
             res.render('dashboard', {
                 logged_in: req.session.logged_in,
                 current_user: req.session.user_id
-            })
+            });
         }
+
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+router.get('/newpost', withAuth, async (req, res) => {
+    try {
+        res.render('newpost', { logged_in: req.session.logged_in });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/post/:id', async (req, res) => {
     try {
@@ -75,7 +82,7 @@ router.get('/post/:id', async (req, res) => {
             where: {
                 post_id: req.params.id
             }
-        })
+        });
 
         let comments = commentData.map((comment) => comment.get({ plain: true }));
         comments = comments.map((comment) => ({ ...comment, current_user: req.session.user_id }))
@@ -85,19 +92,19 @@ router.get('/post/:id', async (req, res) => {
             logged_in: req.session.logged_in,
             current_user: req.session.user_id
         });
+
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 router.get('/post/edit/:id', async (req, res) => {
     const postData = await Post.findByPk(req.params.id, {
         include: [{ model: User }],
         attributes: { exclude: ['password'] },
     });
-
     const post = postData.get({ plain: true });
-
     res.render('editpost', {
         post,
         logged_in: req.session.logged_in,
@@ -117,5 +124,6 @@ router.get('/comment/edit/:id', async (req, res) => {
         current_user: req.session.user_id
     });
 });
+
 
 module.exports = router;
