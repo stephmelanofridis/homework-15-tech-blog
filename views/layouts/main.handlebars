@@ -29,7 +29,7 @@
                 <li class="nav-item"><a href="/" title="Homepage" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/dashboard" title="Dashboard" class="nav-link">Dashboard</a></li>
                 {{#if logged_in}}
-                <li class="nav-item"><a href="/loggedout" title="Logout" class="nav-link">Logout</a></li>
+                <li class="nav-item"><a href="/" title="Logout" class="nav-link logout">Logout</a></li>
                 {{else}}
                 <li class="nav-item"><a href="/loginsignup" title="Login / Sign Up" class="nav-link">Login / Sign Up</a>
                 </li>
@@ -61,6 +61,10 @@
             </div>
         </div>
     </footer>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 
 </body>
 

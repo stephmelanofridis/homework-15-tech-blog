@@ -1,0 +1,11 @@
+<form id="comment-form" data-postid={{comment.post_id}} data-commentid="{{comment.id}}">
+    <div class="mb-3">
+        <label for="content" class="form-label">Edit your comment</label>
+        <textarea class="form-control" id="content" rows="5"
+            placeholder="Add your content">{{comment.content}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-light">Submit</button>
+</form>
+
+<script src="/js/editcomment.js"></script>

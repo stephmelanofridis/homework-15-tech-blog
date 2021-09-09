@@ -133,7 +133,7 @@ button.deleteBtn {
     box-shadow: 2px 2px 8px var(--orange);
 }
 
-.no-posts {
+.no-posts, .poster {
     font-style: italic;
     color: lightslategrey;
     font-weight: 300;

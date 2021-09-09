@@ -2,8 +2,8 @@
     <h5 class="card-header">{{title}}</h5>
     <div class="card-body">
         <p class="card-title text-secondary fw-light fst-italic">Published by {{user.username}} on {{format_date
-            date_created}} {{format_time date_created}}</p>
+            createdAt}} at {{format_date createdAt}}</p>
         <p class="card-text">{{content}}</p>
-        <a href="/post/{{id}}" class="btn btn-primary">See more</a>
+        <a href="/post/{{id}}" class="btn btn-light">See more</a>
     </div>
 </div>

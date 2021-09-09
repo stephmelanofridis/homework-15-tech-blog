@@ -1,0 +1,11 @@
+<section class="card" data-commentid="{{id}}">
+    <p class="card-header">Comment by {{user.username}} on {{createdAt}} {{createdAt}}</p>
+
+    <div class="card-body">
+        <p class="card-text">{{content}}</p>
+        <a href="/comment/edit/{{id}}"><button type="submit" class="btn btn-light" id="editBtn">Edit
+                comment</button></a>
+        <button type="submit" class="btn btn-light" data-commentid="{{id}}" data-postid="{{postID}}">Delete
+            comment</button>
+    </div>
+</section>
