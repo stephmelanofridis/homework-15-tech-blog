@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Login and sign up page
 router.get('/loginsignup', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -52,6 +53,15 @@ router.get('/dashboard', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     };
+});
+
+// Create new blog post page
+router.get('/newpost', async (req, res) => {
+    try {
+        res.render('newpost')
+    } catch (err) {
+        res.stautus(500).json(err);
+    }
 });
 
 module.exports = router;
