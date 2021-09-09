@@ -1,9 +1,13 @@
-<div class="card" data-postid="{{id}}">
-    <h5 class="card-header">{{title}}</h5>
+<div class="card m-5" data-postid="{{id}}">
+    <h3 class="card-header d-flex flex-row justify-content-between"><span>{{title}}</span><span>
+            <p class="card-title text-secondary fw-light fst-italic poster">Published by {{user.username}} on
+                {{format_date
+                createdAt}} at {{format_time createdAt}}</p>
+        </span></h3>
     <div class="card-body">
-        <p class="card-title text-secondary fw-light fst-italic">Published by {{user.username}} on {{format_date
-            createdAt}} at {{format_date createdAt}}</p>
         <p class="card-text">{{content}}</p>
-        <a href="/post/{{id}}" class="btn btn-light">See more</a>
+        <div class="d-flex flex-row justify-content-end">
+            <a href="/post/{{id}}" class="btn btn-light home-post-view">View</a>
+        </div>
     </div>
 </div>

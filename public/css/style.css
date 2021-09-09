@@ -116,6 +116,10 @@ footer {
 }
 
 /* ---------- DASHBOARD HANDLEBARS ---------- */
+.add-new-blog.btn {
+    font-size: 1.4em;
+}
+
 .add-new-blog.btn:hover {
     color: white;
     background-color: var(--darkpurple);
@@ -137,6 +141,22 @@ button.deleteBtn {
     font-style: italic;
     color: lightslategrey;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 20px;
     padding: 10px 40px;
+}
+
+/* post-details partial */
+
+a.home-post-view:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
+}
+
+/* ---------- DASHBOARD HANDLEBARS ---------- */
+
+button.edit-post-btn:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
 }

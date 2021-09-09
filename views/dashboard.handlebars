@@ -1,15 +1,21 @@
 <div class="p-6 m-6">
-    <div class="d-grid w-50 p-6 m-6 position-relative top-50 start-50 translate-middle">
-        <a href="/newpost"><button class="add-new-blog btn mt-5" type="button">Add new blog post</button></a>
+    <div class="w-50 p-6 m-6 position-relative top-50 start-50 translate-middle">
+        <a href="/newpost"><button class="add-new-blog btn mt-5" type="button"> <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+                </svg> Add new blog post</button></a>
     </div>
 </div>
-{{#if posts}}
-{{#each posts as |post|}}
-{{>dashboard-details}}
-{{/each}}
-{{else}}
-<h2 class="no-posts"> No posts to show yet.</h2>
-{{/if}}
-{{#if posts}}
+<div class="m-5">
+    {{#if posts}}
+    {{#each posts as |post|}}
+    {{>dashboard-details}}
+    {{/each}}
+    {{else}}
+    <h2 class="no-posts"> No posts to show yet.</h2>
+    {{/if}}
+    {{#if posts}}
+</div>
 <script src="js/deletepost.js"></script>
 {{/if}}
