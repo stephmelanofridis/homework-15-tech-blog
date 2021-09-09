@@ -1,0 +1,22 @@
+<section class="card row g-3 align-items-center">
+    <div class="card-body d-flex flex-column p-4 w-10">
+        <div>
+            <h2 class="card-title text-center">Edit your post</h2>
+            <form class="form edit-post-form" data-postid="{{post.id}}">
+        </div>
+        <div>
+            <label for="blog-title" class="form-label">Title</label>
+            <input type="text" class="form-control blog-title" value="{{post.title}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="blog-content" class="form-label">Content</label>
+            <textarea class="form-control blog-content" rows="3">{{post.content}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-light">Publish Changes</button>
+        </form>
+    </div>
+</section>
+
+<script src="/js/editpost.js"></script>

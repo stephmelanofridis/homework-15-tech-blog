@@ -132,3 +132,11 @@ button.deleteBtn {
     background-color: var(--darkpurple);
     box-shadow: 2px 2px 8px var(--orange);
 }
+
+.no-posts {
+    font-style: italic;
+    color: lightslategrey;
+    font-weight: 300;
+    font-size: 1.2em;
+    padding: 10px 40px;
+}

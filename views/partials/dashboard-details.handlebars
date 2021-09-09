@@ -2,8 +2,9 @@
     <h3 class="card-header">{{title}}</h3>
     <div class="card-body position-relative">
         <p class="card-title text-secondary d-flex flex-row"> Posted on {{format_date date_created}}</p>
+        <a href="/post/{{id}}"><button type="submit" class="btn btn-primary" id="editBtn">View</button></a>
         <a href="/post/edit/{{id}}"><button class="btn position-absolute top-50 end-0 translate-middle-y mx-2"
-                type="submit" id="editBtn"> Edit Post </button></a>
+                type="submit" id="editBtn"> Edit</button></a>
         <p>{{content}}</p>
         <button class="btn deleteBtn" type="submit" id="deleteBtn" data-postid="{{id}}">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
