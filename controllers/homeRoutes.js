@@ -5,15 +5,15 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
-            include: ['poster', 'comment'],
-            order: [['date_created', 'DESC']],
+            include: [{ model: User }],
+            order: [['createdAt', 'DESC']],
         });
 
         const posts = postData.map((post) => post.get({ plain: true }));
         res.render('homepage', {
-            layout: 'main',
             posts,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            current_user: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -32,23 +32,29 @@ router.get('/loginsignup', (req, res) => {
 router.get('/dashboard', async (req, res) => {
     try {
         const postData = await Post.findAll({
-            include: { model: User, as: 'poster' },
+            include: [{ model: User }],
             attributes: { exclude: ['password'] },
-            order: [['date_created', 'DESC']],
-            where: { id: req.session.id, }
+            order: [['createdAt', 'DESC']],
+            where: {
+                user_id: req.session.user_id,
+            }
         });
 
         if (postData.length > 0) {
             const posts = postData.map((post) => post.get({ plain: true }));
+            console.log(posts)
             res.render('dashboard', {
                 posts,
                 logged_in: req.session.logged_in,
+                current_user: req.session.user_id
             });
+
         } else {
             res.render('dashboard', {
-                logged_in: req.session.logged_in
-            });
-        };
+                logged_in: req.session.logged_in,
+                current_user: req.session.user_id
+            })
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -56,12 +62,69 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // Create new blog post page
-router.get('/newpost', async (req, res) => {
+router.get('/newpost', withAuth, async (req, res) => {
     try {
-        res.render('newpost')
+        res.render('newpost', { logged_in: req.session.logged_in });
     } catch (err) {
-        res.stautus(500).json(err);
+        res.status(500).json(err);
     }
+});
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Comment }],
+            attributes: { exclude: ['password'] },
+        });
+
+        const post = postData.get({ plain: true });
+        const commentData = await Comment.findAll({
+            include: [{ model: User }],
+            attributes: { exclude: ['password'] },
+            where: {
+                post_id: req.params.id
+            }
+        })
+
+        let comments = commentData.map((comment) => comment.get({ plain: true }));
+        comments = comments.map((comment) => ({ ...comment, current_user: req.session.user_id }))
+        res.render('post', {
+            post,
+            comments,
+            logged_in: req.session.logged_in,
+            current_user: req.session.user_id
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/post/edit/:id', async (req, res) => {
+    const postData = await Post.findByPk(req.params.id, {
+        include: [{ model: User }],
+        attributes: { exclude: ['password'] },
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('editpost', {
+        post,
+        logged_in: req.session.logged_in,
+        current_user: req.session.user_id
+    });
+});
+
+router.get('/comment/edit/:id', async (req, res) => {
+    const commentData = await Comment.findByPk(req.params.id, {
+        include: [{ model: User }],
+        attributes: { exclude: ['password'] },
+    });
+    const comment = commentData.get({ plain: true });
+    res.render('editcomment', {
+        comment,
+        logged_in: req.session.logged_in,
+        current_user: req.session.user_id
+    });
 });
 
 module.exports = router;

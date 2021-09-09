@@ -9,24 +9,15 @@ Post.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        date_created: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -38,11 +29,11 @@ Post.init(
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'post',
-    },
+    }
 );
 
 module.exports = Post;
