@@ -11,23 +11,24 @@
         </div>
     </div>
 
-    <form class="comment-form p-4"></form>
-    <h3>Comments</h3>
-    {{#each comments as |comment|}}
-    {{>comment-details}}
-    {{/each}}
-    {{#if logged_in}}
-    <div class="mb-3">
-        <label for="comment" class="form-label">Leave a comment</label>
-        <textarea class="form-control comment" rows="5"></textarea>
+
+    <div class="p-4">
+        <h3>Comments</h3>
+        {{#each comments as |comment|}}
+        {{>comment-details}}
+        {{/each}}
+        {{#if logged_in}}
+        <form class="comment-form">
+            <div class="mb-3">
+                <label for="comment" class="form-label">Leave a comment</label>
+                <textarea class="form-control comment" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Add a comment</button>
+        </form>
+        {{else}}
+        <div class="alert" role="alert">
+            You need to be <a href="/loginsignup" class="alert-link"></a>logged in</a> to make comments.
+        </div>
+        {{/if}}
     </div>
-    <button type="submit" class="btn btn-light">Add a comment</button>
-    </form>
-    <script src="/js/newcomment.js"></script>
-    <script src="/js/deletecomment.js"></script>
-    {{else}}
-    <div class="alert alert-warning" role="alert">
-        You need to be <a href="/loginsignup" class="alert-link"></a>logged in</a> to make comments.
-    </div>
-    {{/if}}
 </section>

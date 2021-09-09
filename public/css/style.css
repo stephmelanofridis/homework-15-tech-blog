@@ -145,7 +145,7 @@ button.deleteBtn {
     padding: 10px 40px;
 }
 
-/* post-details partial */
+/* posts */
 
 a.home-post-view:hover {
     color: white;
@@ -153,9 +153,14 @@ a.home-post-view:hover {
     box-shadow: 2px 2px 8px var(--orange);
 }
 
-/* ---------- DASHBOARD HANDLEBARS ---------- */
-
 button.edit-post-btn:hover {
+    color: white;
+    background-color: var(--darkpurple);
+    box-shadow: 2px 2px 8px var(--orange);
+}
+
+
+button.new-post-btn:hover {
     color: white;
     background-color: var(--darkpurple);
     box-shadow: 2px 2px 8px var(--orange);
