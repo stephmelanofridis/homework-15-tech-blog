@@ -29,7 +29,7 @@ router.get('/loginsignup', (req, res) => {
     res.render('loginsignup');
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [{ model: User }],
@@ -39,7 +39,6 @@ router.get('/dashboard', async (req, res) => {
                 user_id: req.session.user_id,
             }
         });
-
         if (postData.length > 0) {
             const posts = postData.map((post) => post.get({ plain: true }));
             console.log(posts)
@@ -48,27 +47,19 @@ router.get('/dashboard', async (req, res) => {
                 logged_in: req.session.logged_in,
                 current_user: req.session.user_id
             });
-
-        } else {
+        }
+        else {
+            console.log('here is the dashboard')
             res.render('dashboard', {
                 logged_in: req.session.logged_in,
                 current_user: req.session.user_id
             })
         }
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    };
-});
-
-// Create new blog post page
-router.get('/newpost', withAuth, async (req, res) => {
-    try {
-        res.render('newpost', { logged_in: req.session.logged_in });
-    } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 router.get('/post/:id', async (req, res) => {
     try {

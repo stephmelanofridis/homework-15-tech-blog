@@ -1,6 +1,5 @@
 {
+    "user_id": 1,
     "title": "Blog Title",
-    "content": "Blog content",
-    "username": "Steph",
-    "user_id": 1
+    "content": "Blog Content"
 }
