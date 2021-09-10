@@ -2,7 +2,7 @@
 # Tech Blog
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Our task this week was to build a CMS style blog website. The blog was required to have a login / sign up page, a homepagw which would display existing blogs (must log in before viewing), a dashboard that displays all blogs plus options to add a blog, edit a blog, delete a blog and comment on a blog. The site was built completely from scratch and then deployed to Heroku. The app follows the MVC paradign and uses Handlebars.js, Sequelize, Express.js and express-session for authentication.
+Our task this week was to build a CMS style blog website. The blog was required to have a login / sign up page, a homepagw which would display existing blogs (must log in before viewing), a dashboard that displays all blogs plus options to add a blog, edit a blog, delete a blog and comment on a blog. The site was built completely from scratch and then deployed to Heroku. The app follows the MVC paradigm and uses Handlebars.js, Sequelize, Express.js and express-session for authentication.
 
 ## Table of Contents
 
