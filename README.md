@@ -31,7 +31,7 @@ Technologies used to make this site were:
 
 ## Deployed Site
 
-Link to deployed site: 
+Link to deployed site: https://homework-15-tech-blog.herokuapp.com/loginsignup
 
 ## License
 
